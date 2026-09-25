@@ -1,19 +1,77 @@
-name: Publish ROM Release to Telegram
+- name: Send Post to Telegram
+        shell: bash
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          set -euo pipefail
 
-on:
-  workflow_dispatch:
+          # Формируем стандартный HTML текст для поста
+          HTML=$(cat <<EOF
+          <a href="https://i.ibb.co/ZRkKV76G/banner.png">&#8203;</a>
+          #duchamp #port #tengeos #a17 #fenrir
 
-jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+          <b>TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17</b>
 
-      - name: Send post to Telegram channel
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TG_CHAT_ID }}
-          token: ${{ secrets.TG_BOT_TOKEN }}
-          message_file: post.txt
-          disable_web_page_preview: false
+          📱 <b>Device</b>
+          • Model: POCO X6 Pro / REDMI K70E
+          • Codename: Duchamp
+
+          Released: 25/09/2026
+          Maintainer: @wectazz
+
+          📦 <b>About ROM</b>
+          • OS Version: TengeOS 4.0.0.6 Global (Europe)
+          • Base Port: Xiaomi 17T Pro
+          • Android: 17
+          • Build Type: Fenrir / Non-Fenrir
+          • Flashing Type: Hybrid (recovery/fastboot)
+
+          📝 <b>Notes</b>
+          • <u>CLEAN FLASH ONLY FOR FENRIR!</u>
+          • For fullscreen aod <u>use 10 sec option</u>
+          • To Reduce cpu clamping and cpusets, use <a href="https://t.me/DuchampROM_screenshots/343">this</a>
+          • Already with ReSukiSU with SuSFS v2.3.0 (non-fenrir)
+
+          🐛 <b>Bugs</b>
+          • <u>Still have some bugs with fullscreen aod, so i recommended to NOT use it</u>
+          • You tell me, this is beta hos
+          EOF
+          )
+
+          # Собираем правильный JSON и добавляем инлайн-кнопки
+          jq -n \
+            --arg chat_id "$TELEGRAM_CHAT_ID" \
+            --arg text "$HTML" \
+            '{
+              chat_id: $chat_id,
+              text: $text,
+              parse_mode: "HTML",
+              disable_web_page_preview: false,
+              reply_markup: {
+                inline_keyboard: [
+                  [
+                    { text: "📦 Fenrir", url: "https://drive.google.com/file/d/1-SaywPsB9NHtwV-m757rivpVIklbJZ7N/view?usp=drive_link" },
+                    { text: "📦 Non-Fenrir", url: "https://drive.google.com/file/d/1rZLsZPsGGcnrFCI7PFdtpJ2-VQ51mGW0/view?usp=sharing" }
+                  ],
+                  [
+                    { text: "📖 How to flash", url: "https://telegra.ph/How-to-flash-08-19" },
+                    { text: "📄 Changelog", url: "https://telegra.ph/Changelog-09-25-4" }
+                  ],
+                  [
+                    { text: "🖼 Screenshots", url: "https://t.me/DuchampROM_screenshots/357" },
+                    { text: "🤝 Credits", url: "https://telegra.ph/Credits-08-30-11" }
+                  ]
+                ]
+              }
+            }' > telegram_payload.json
+
+          # Отправляем на официальный метод sendMessage
+          curl \
+            --fail-with-body \
+            --silent \
+            --show-error \
+            -X POST \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -H "Content-Type: application/json" \
+            --data @telegram_payload.json
