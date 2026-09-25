@@ -1,4 +1,15 @@
-- name: Send Post to Telegram
+name: Test Rich Message Payload
+on:
+  workflow_dispatch:
+
+jobs:
+  test_post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Send Telegram Rich Message
         shell: bash
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
@@ -6,72 +17,87 @@
         run: |
           set -euo pipefail
 
-          # Формируем стандартный HTML текст для поста
           HTML=$(cat <<EOF
           <a href="https://i.ibb.co/ZRkKV76G/banner.png">&#8203;</a>
           #duchamp #port #tengeos #a17 #fenrir
 
-          <b>TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17</b>
-
-          📱 <b>Device</b>
-          • Model: POCO X6 Pro / REDMI K70E
-          • Codename: Duchamp
-
+          # TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17
+          
+          <table bordered>
+            <tr>
+              <th colspan="2" align="center">Device</th>
+            </tr>
+            <tr>
+              <td>Model</td><td>POCO X6 Pro / REDMI K70E</td>
+            </tr>
+            <tr>
+              <td>Codename</td><td>Duchamp</td>
+            </tr>
+          </table>
+          
           Released: 25/09/2026
           Maintainer: @wectazz
 
-          📦 <b>About ROM</b>
-          • OS Version: TengeOS 4.0.0.6 Global (Europe)
-          • Base Port: Xiaomi 17T Pro
-          • Android: 17
-          • Build Type: Fenrir / Non-Fenrir
-          • Flashing Type: Hybrid (recovery/fastboot)
+          <details>
+            <summary><code>About ROM</code></summary>
+            <table bordered>
+              <tr>
+                <th colspan="2" align="center">Build information</th>
+              </tr>
+              <tr>
+                <td>OS Version</td><td>TengeOS 4.0.0.6 Global (Europe)</td>
+              </tr>
+              <tr>
+                <td>Base Port</td><td>Xiaomi 17T Pro</td>
+              </tr>
+              <tr>
+                <td>Android</td><td>17</td>
+              </tr>
+              <tr>
+                <td>Build Type</td><td>Fenrir / Non-Fenrir</td>
+              </tr>
+              <tr>
+                <td>Flashing Type</td><td>Hybrid (recovery/fastboot)</td>
+              </tr>
+            </table>
+          </details>
 
-          📝 <b>Notes</b>
-          • <u>CLEAN FLASH ONLY FOR FENRIR!</u>
-          • For fullscreen aod <u>use 10 sec option</u>
-          • To Reduce cpu clamping and cpusets, use <a href="https://t.me/DuchampROM_screenshots/343">this</a>
-          • Already with ReSukiSU with SuSFS v2.3.0 (non-fenrir)
-
-          🐛 <b>Bugs</b>
-          • <u>Still have some bugs with fullscreen aod, so i recommended to NOT use it</u>
-          • You tell me, this is beta hos
+          <details>
+            <summary><code>Links</code></summary>
+            <table bordered>
+              <tr>
+                <th colspan="2" align="center">Download</th>
+              </tr>
+              <tr>
+                <td align="center"><a href="https://drive.google.com/file/d/1-SaywPsB9NHtwV-m757rivpVIklbJZ7N/view?usp=drive_link">Fenrir</a></td>
+                <td align="center"><a href="https://drive.google.com/file/d/1rZLsZPsGGcnrFCI7PFdtpJ2-VQ51mGW0/view?usp=sharing">Non-Fenrir</a></td>
+              </tr>
+            </table>
+            <ol>
+              <li><a href="https://telegra.ph/How-to-flash-08-19">How to flash</a></li>
+              <li><a href="https://telegra.ph/Changelog-09-25-4">Changelog</a></li>
+              <li><a href="https://t.me/DuchampROM_screenshots/357">Screenshots</a></li>
+              <li><a href="https://telegra.ph/Credits-08-30-11">Credits</a></li>
+            </ol>
+          </details>
           EOF
           )
 
-          # Собираем правильный JSON и добавляем инлайн-кнопки
           jq -n \
             --arg chat_id "$TELEGRAM_CHAT_ID" \
-            --arg text "$HTML" \
+            --arg html "$HTML" \
             '{
               chat_id: $chat_id,
-              text: $text,
-              parse_mode: "HTML",
-              disable_web_page_preview: false,
-              reply_markup: {
-                inline_keyboard: [
-                  [
-                    { text: "📦 Fenrir", url: "https://drive.google.com/file/d/1-SaywPsB9NHtwV-m757rivpVIklbJZ7N/view?usp=drive_link" },
-                    { text: "📦 Non-Fenrir", url: "https://drive.google.com/file/d/1rZLsZPsGGcnrFCI7PFdtpJ2-VQ51mGW0/view?usp=sharing" }
-                  ],
-                  [
-                    { text: "📖 How to flash", url: "https://telegra.ph/How-to-flash-08-19" },
-                    { text: "📄 Changelog", url: "https://telegra.ph/Changelog-09-25-4" }
-                  ],
-                  [
-                    { text: "🖼 Screenshots", url: "https://t.me/DuchampROM_screenshots/357" },
-                    { text: "🤝 Credits", url: "https://telegra.ph/Credits-08-30-11" }
-                  ]
-                ]
+              rich_message: {
+                html: $html
               }
             }' > telegram_payload.json
 
-          # Отправляем на официальный метод sendMessage
           curl \
             --fail-with-body \
             --silent \
             --show-error \
             -X POST \
-            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendRichMessage" \
             -H "Content-Type: application/json" \
             --data @telegram_payload.json
