@@ -18,11 +18,8 @@ jobs:
           set -euo pipefail
 
           HTML=$(cat <<EOF
-          <a href="https://i.ibb.co/ZRkKV76G/banner.png">ᅠ</a>
-          #duchamp #port #tengeos #a17 #fenrir<br>
-          <br>
+          <a href="https://i.ibb.co/ZRkKV76G/banner.png">&#8203;</a>#duchamp #port #tengeos #a17 #fenrir
           <h1>TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17</h1>
-          
           <table bordered>
             <tr>
               <th colspan="2" align="center">Device</th>
@@ -34,10 +31,8 @@ jobs:
               <td>Codename</td><td>Duchamp</td>
             </tr>
           </table>
-          
           Released: 25/09/2026<br>
           Maintainer: @wectazz
-          
           <details>
             <summary><code>About ROM</code></summary>
             <table bordered>
@@ -61,7 +56,6 @@ jobs:
               </tr>
             </table>
           </details>
-
           <details>
             <summary><code>Links</code></summary>
             <table bordered>
@@ -80,7 +74,6 @@ jobs:
               <li><a href="https://telegra.ph/Credits-08-30-11">Credits</a></li>
             </ol>
           </details>
-
           <details>
             <summary><code>Notes</code></summary>
             <ol>
@@ -90,7 +83,6 @@ jobs:
               <li>Already with ReSukiSU with SuSFS v2.3.0 (non-fenrir)</li>
             </ol>
           </details>
-
           <details>
             <summary><code>Bugs</code></summary>
             <ol>
@@ -107,6 +99,9 @@ jobs:
             '{
               chat_id: $chat_id,
               disable_web_page_preview: false,
+              link_preview_options: {
+                is_disabled: false
+              },
               rich_message: {
                 html: $html
               }
@@ -120,3 +115,4 @@ jobs:
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendRichMessage" \
             -H "Content-Type: application/json" \
             --data @telegram_payload.json
+
