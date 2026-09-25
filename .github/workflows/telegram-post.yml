@@ -18,11 +18,11 @@ jobs:
           set -euo pipefail
 
           HTML=$(cat <<EOF
-          <a href="https://i.ibb.co/ZRkKV76G/banner.png">&#8203;</a>
+          <a href="https://i.ibb.co/ZRkKV76G/banner.png">ᅠ</a>
           #duchamp #port #tengeos #a17 #fenrir<br>
           <br>
-          # TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17<br>
-          <br>
+          <h1>TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17</h1>
+          
           <table bordered>
             <tr>
               <th colspan="2" align="center">Device</th>
@@ -106,6 +106,7 @@ jobs:
             --arg html "$HTML" \
             '{
               chat_id: $chat_id,
+              disable_web_page_preview: false,
               rich_message: {
                 html: $html
               }
