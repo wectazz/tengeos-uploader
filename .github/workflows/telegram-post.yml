@@ -18,8 +18,8 @@ jobs:
           set -euo pipefail
 
           HTML=$(cat <<EOF
-          #duchamp #port #tengeos #a17 #fenrir
-          <a href="https://graph.org/file/802927beea982fe0b6acd-a10693e714b57a1a62.jpg">&#8203;</a>
+          #duchamp #port #tengeos #a17 #fenrir<br>
+          <img src="https://graph.org/file/802927beea982fe0b6acd-a10693e714b57a1a62.jpg" /><br>
           <h1>TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17</h1>
           <table bordered>
             <tr>
@@ -99,9 +99,10 @@ jobs:
             --arg html "$HTML" \
             '{
               chat_id: $chat_id,
-              disable_web_page_preview: false,
               link_preview_options: {
-                is_disabled: false
+                is_disabled: false,
+                url: "https://graph.org/file/802927beea982fe0b6acd-a10693e714b57a1a62.jpg",
+                prefer_large_media: true
               },
               rich_message: {
                 html: $html
@@ -116,4 +117,3 @@ jobs:
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendRichMessage" \
             -H "Content-Type: application/json" \
             --data @telegram_payload.json
-
