@@ -1,9 +1,9 @@
-name: Test Rich Message Payload
+name: Send ROM Release to Telegram
 on:
   workflow_dispatch:
 
 jobs:
-  test_post:
+  post_release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -17,10 +17,11 @@ jobs:
         run: |
           set -euo pipefail
 
+          # Собираем шаблон
           HTML=$(cat <<EOF
           <a href="https://i.ibb.co/ZRkKV76G/banner.png">&#8203;</a>
           #duchamp #port #tengeos #a17 #fenrir
-
+          
           # TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17
           
           <table bordered>
@@ -37,7 +38,7 @@ jobs:
           
           Released: 25/09/2026
           Maintainer: @wectazz
-
+          
           <details>
             <summary><code>About ROM</code></summary>
             <table bordered>
@@ -80,9 +81,28 @@ jobs:
               <li><a href="https://telegra.ph/Credits-08-30-11">Credits</a></li>
             </ol>
           </details>
+
+          <details>
+            <summary><code>Notes</code></summary>
+            <ol>
+              <li><u>CLEAN FLASH ONLY FOR FENRIR!</u></li>
+              <li>For fullscreen aod <u>use 10 sec option</u></li>
+              <li>To Reduce cpu clamping and cpusets, use <a href="https://t.me/DuchampROM_screenshots/343">this</a></li>
+              <li>Already with ReSukiSU with SuSFS v2.3.0 (non-fenrir)</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary><code>Bugs</code></summary>
+            <ol>
+              <li><u>Still have some bugs with fullscreen aod, so i recommended to NOT use it</u></li>
+              <li>You tell me, this is beta hos</li>
+            </ol>
+          </details>
           EOF
           )
 
+          # Пакуем в JSON
           jq -n \
             --arg chat_id "$TELEGRAM_CHAT_ID" \
             --arg html "$HTML" \
@@ -93,6 +113,7 @@ jobs:
               }
             }' > telegram_payload.json
 
+          # Отправляем (если у вас кастомный URL сервера, замени api.telegram.org на него)
           curl \
             --fail-with-body \
             --silent \
