@@ -15,5 +15,5 @@ jobs:
         with:
           to: ${{ secrets.TG_CHAT_ID }}
           token: ${{ secrets.TG_BOT_TOKEN }}
-          message_file: release_post.txt
+          message_file: post.txt
           disable_web_page_preview: false
