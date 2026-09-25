@@ -18,11 +18,11 @@ jobs:
           set -euo pipefail
 
           HTML=$(cat <<EOF
-          ![banner](https://i.ibb.co/ZRkKV76G/banner.png)
-          #duchamp #port #tengeos #a17 #fenrir
-          
-          # TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17
-          
+          <a href="https://i.ibb.co/ZRkKV76G/banner.png">&#8203;</a>
+          #duchamp #port #tengeos #a17 #fenrir<br>
+          <br>
+          # TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17<br>
+          <br>
           <table bordered>
             <tr>
               <th colspan="2" align="center">Device</th>
