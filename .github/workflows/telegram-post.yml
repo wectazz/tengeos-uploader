@@ -17,9 +17,8 @@ jobs:
         run: |
           set -euo pipefail
 
-          # Собираем шаблон
           HTML=$(cat <<EOF
-          <a href="https://i.ibb.co/ZRkKV76G/banner.png">&#8203;</a>
+          ![banner](https://i.ibb.co/ZRkKV76G/banner.png)
           #duchamp #port #tengeos #a17 #fenrir
           
           # TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17
@@ -36,7 +35,7 @@ jobs:
             </tr>
           </table>
           
-          Released: 25/09/2026
+          Released: 25/09/2026<br>
           Maintainer: @wectazz
           
           <details>
@@ -102,7 +101,6 @@ jobs:
           EOF
           )
 
-          # Пакуем в JSON
           jq -n \
             --arg chat_id "$TELEGRAM_CHAT_ID" \
             --arg html "$HTML" \
@@ -113,7 +111,6 @@ jobs:
               }
             }' > telegram_payload.json
 
-          # Отправляем (если у вас кастомный URL сервера, замени api.telegram.org на него)
           curl \
             --fail-with-body \
             --silent \
