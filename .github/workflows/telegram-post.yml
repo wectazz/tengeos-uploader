@@ -19,7 +19,7 @@ jobs:
 
           HTML=$(cat <<EOF
           #duchamp #port #tengeos #a17 #fenrir<br>
-          <img src="https://graph.org/file/802927beea982fe0b6acd-a10693e714b57a1a62.jpg" /><br>
+          <img src="https://graph.org/file/802927beea982fe0b6acd-a10693e714b57a1a62.jpg" />
           <h1>TengeOS 4.0.0.6.XPSEUXM | Fenrir / Non-Fenrir | Android 17</h1>
           <table bordered>
             <tr>
