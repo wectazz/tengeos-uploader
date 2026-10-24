@@ -76,8 +76,9 @@ jobs:
             <ol>
               <li>Already with BakaSU with SuSFS v2.3.0</li>
               <li>Mi Cam added</li>
-              <li>Aod</li>
-              <li>Sofod</li>
+              <li>Aod fixed</li>
+              <li>Sofod fixed</li>
+              <li>Need more scrren time? Disable aod</li>
               <li>Fastboot only</li>
             </ol>
           </details>
