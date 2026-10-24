@@ -21,16 +21,13 @@ Maintainer: @wectazz
       <th colspan="2" align="center">Build information</th>
     </tr>
     <tr>
-      <td>OS Version</td><td>TengeOS 4.0.0.6 Global (Europe)</td>
-    </tr>
-    <tr>
-      <td>Base Port</td><td>Xiaomi 17T Pro</td>
+      <td>OS Version</td><td>ColorOS 17</td>
     </tr>
     <tr>
       <td>Android</td><td>17</td>
     </tr>
     <tr>
-      <td>Build Type</td><td>Fenrir / Non-Fenrir</td>
+      <td>Build Type</td><td>Non-Fenrir</td>
     </tr>
     <tr>
       <td>Flashing Type</td><td>Hybrid (recovery/fastboot)</td>
