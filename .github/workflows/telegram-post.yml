@@ -85,7 +85,7 @@ jobs:
           <details>
             <summary><code>Bugs</code></summary>
             <ol>
-              <li>Idk what about shutdown randomly, was not observed</li>
+              <li>Shutdown randomly was not observed</li>
               <li>Autobrightness</li>
             </ol>
           </details>
