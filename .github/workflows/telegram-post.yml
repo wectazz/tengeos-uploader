@@ -74,6 +74,7 @@ jobs:
           <details>
             <summary><code>Notes</code></summary>
             <ol>
+              <li>Shutdown randomly was not observed</li>
               <li>Already with BakaSU with SuSFS v2.3.0</li>
               <li>Mi Cam, aod, sofod, and more fixed, check changelog</li>
               <li>You can use <a href="https://t.me/DuchampROM_screenshots/389">my own</a> preset in ViperFX (enable legacy mode)</li>
@@ -85,7 +86,6 @@ jobs:
           <details>
             <summary><code>Bugs</code></summary>
             <ol>
-              <li>Shutdown randomly was not observed</li>
               <li>Autobrightness</li>
             </ol>
           </details>
