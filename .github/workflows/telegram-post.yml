@@ -19,8 +19,8 @@ jobs:
 
           HTML=$(cat <<EOF
           #duchamp #port #a17 #coloros
-          <img src="https://i.ibb.co/jP7xgJhB/Group-1.png" />
-          <h1>ColorOS 17 | Port | Android 17</h1>
+          <img src="https://i.ibb.co/bRb0QJtY/Frame-5.png" />
+          <h1>ColorOS 17 Global | Port | Android 17</h1>
           <table bordered>
             <tr>
               <th colspan="2" align="center">Device</th>
@@ -32,7 +32,7 @@ jobs:
               <td>Codename</td><td>Duchamp</td>
             </tr>
           </table>
-          Released: 24/10/2026<br>
+          Released: 30/10/2026<br>
           Maintainer: @wectazz
           <details>
             <summary><code>About ROM</code></summary>
@@ -41,7 +41,7 @@ jobs:
                 <th colspan="2" align="center">Build information</th>
               </tr>
               <tr>
-                <td>OS Version</td><td>ColorOS 17</td>
+                <td>OS Version</td><td>ColorOS 17 Global</td>
               </tr>
               <tr>
                 <td>Android</td><td>17</td>
@@ -61,13 +61,13 @@ jobs:
                 <th colspan="2" align="center">Download</th>
               </tr>
               <tr>
-                <td align="center"><a href="https://drive.google.com/file/d/1V5brXFplXQZkHOPCTxTuwy0ZVxPhJ_oC/view?usp=sharing">Link</a></td>
+                <td align="center"><a href="https://drive.google.com/file/d/1Kmqz3vonF4WPlQ2yGsjG3JK3ldlXJujK/view?usp=sharing">Link</a></td>
               </tr>
             </table>
             <ol>
               <li><a href="https://telegra.ph/How-to-flash-08-19">How to flash</a></li>
-              <li><a href="https://telegra.ph/Changelog-10-24-7">Changelog</a></li>
-              <li><a href="https://t.me/DuchampROM_screenshots/371">Screenshots</a></li>
+              <li><a href="https://telegra.ph/Changelog-10-29-17">Changelog</a></li>
+              <li><a href="https://t.me/DuchampROM_screenshots/391">Screenshots</a></li>
               <li><a href="https://telegra.ph/Credits-10-24-12">Credits</a></li>
             </ol>
           </details>
@@ -76,16 +76,15 @@ jobs:
             <ol>
               <li>Already with BakaSU with SuSFS v2.3.0</li>
               <li>Mi Cam added</li>
-              <li>Aod fixed</li>
-              <li>Sofod fixed</li>
-              <li>Need more screen time? Disable aod</li>
+              <li>U dont want battery drain? Disable aod</li>
               <li>Fastboot only</li>
             </ol>
           </details>
           <details>
             <summary><code>Bugs</code></summary>
             <ol>
-              <li><u>No</u></li>
+              <li><u>Idk what about shutdown randomly, was not observed</u></li>
+              <li><u>Autobrightness</u></li>
             </ol>
           </details>
           EOF
@@ -98,7 +97,7 @@ jobs:
               chat_id: $chat_id,
               link_preview_options: {
                 is_disabled: false,
-                url: "https://i.ibb.co/jP7xgJhB/Group-1.png",
+                url: "https://i.ibb.co/bRb0QJtY/Frame-5.png",
                 prefer_large_media: true
               },
               rich_message: {
