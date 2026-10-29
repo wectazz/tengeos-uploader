@@ -76,6 +76,7 @@ jobs:
             <ol>
               <li>Already with BakaSU with SuSFS v2.3.0</li>
               <li>Mi Cam added</li>
+              <li>For DT2W use DT2W Tool only!!</li>
               <li>U dont want battery drain? Disable aod</li>
               <li>Fastboot only</li>
             </ol>
@@ -83,8 +84,8 @@ jobs:
           <details>
             <summary><code>Bugs</code></summary>
             <ol>
-              <li><u>Idk what about shutdown randomly, was not observed</u></li>
-              <li><u>Autobrightness</u></li>
+              <li>Idk what about shutdown randomly, was not observed</li>
+              <li>Autobrightness</li>
             </ol>
           </details>
           EOF
