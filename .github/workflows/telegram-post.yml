@@ -20,7 +20,7 @@ jobs:
           HTML=$(cat <<EOF
           #duchamp #port #a17 #coloros
           <img src="https://i.ibb.co/bRb0QJtY/Frame-5.png" />
-          <h1>ColorOS 17 Global | Port | Android 17</h1>
+          <h1>ColorOS 17 Global V2 | Port | Android 17</h1>
           <table bordered>
             <tr>
               <th colspan="2" align="center">Device</th>
@@ -61,8 +61,8 @@ jobs:
                 <th colspan="2" align="center">Download</th>
               </tr>
               <tr>
-                <td align="center"><a href="https://drive.google.com/file/d/1Kmqz3vonF4WPlQ2yGsjG3JK3ldlXJujK/view?usp=sharing">Link</a></td>
-                <td align="center"><a href="https://drive.google.com/file/d/1Kmqz3vonF4WPlQ2yGsjG3JK3ldlXJujK/view?usp=sharing">Link</a></td>
+                <td align="center"><a href="https://drive.google.com/file/d/1w0mtnW7xvZfvw5WX_TRZyXSRAFiI9yuv/view?usp=sharing">Link</a></td>
+                <td align="center"><a href="https://pixeldrain.com/u/duL8ZfpN">Mirror</a></td>
               </tr>
             </table>
             <ol>
@@ -75,12 +75,11 @@ jobs:
           <details>
             <summary><code>Notes</code></summary>
             <ol>
-              <li>Already with BakaSU with SuSFS v2.3.0</li>
-              <li>Mi Cam, aod, sofod, and more fixed, check changelog</li>
-              <li>You can use <a href="https://t.me/DuchampROM_screenshots/389">my own</a> preset in ViperFX (enable legacy mode)</li>
-              <li>For DT2W use "DT2W Tool" app only!!</li>
-              <li>U dont want battery drain? Disable aod and fod icon on screen when its turned off</li>
-              <li>Fastboot only</li>
+              <li>Main post <a href="https://t.me/TengeOS_Roms/220">here</a></li>
+              <li>HDR fixed</li>
+              <li>O-Haptic fixed (except video testing vibro)</li>
+              <li>Saturation of screen is forced to 1.5</li>
+              <li>Can dirty flash from V1 global port</li>
             </ol>
           </details>
           <details>
