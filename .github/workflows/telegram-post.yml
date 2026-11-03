@@ -41,7 +41,7 @@ jobs:
                 <th colspan="2" align="center">Build information</th>
               </tr>
               <tr>
-                <td>OS Version</td><td>ColorOS 17 Global</td>
+                <td>OS Version</td><td>ColorOS 17 Global V2</td>
               </tr>
               <tr>
                 <td>Android</td><td>17</td>
