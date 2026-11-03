@@ -32,7 +32,7 @@ jobs:
               <td>Codename</td><td>Duchamp</td>
             </tr>
           </table>
-          Released: 01/11/2026<br>
+          Released: 03/11/2026<br>
           Maintainer: @wectazz
           <details>
             <summary><code>About ROM</code></summary>
@@ -76,7 +76,7 @@ jobs:
             <summary><code>Notes</code></summary>
             <ol>
               <li>Main post <a href="https://t.me/TengeOS_Roms/220">here</a></li>
-              <li>HDR, O-Haptic fixed</li>
+              <li>HDR, O-Haptic fixed, mind pilot, theme store returned</li>
               <li>Saturation of screen is forced to 1.5</li>
               <li>Can dirty flash from V1 global port</li>
             </ol>
