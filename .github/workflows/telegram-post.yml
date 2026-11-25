@@ -20,7 +20,7 @@ jobs:
           HTML=$(cat <<EOF
           #duchamp #port #a17 #coloros
           <img src="https://i.ibb.co/GvtW8bTQ/Frame-2-1.png" />
-          <h1>FluidOS 4.0.5.0.XPTCNXM | FENRIR / NON-FENRIR | Port | Android 17</h1>
+          <h1>FluidOS 4.0.5.0 China | FENRIR / NON-FENRIR | Port | Android 17</h1>
           <table bordered>
             <tr>
               <th colspan="2" align="center">Device</th>
@@ -41,7 +41,7 @@ jobs:
                 <th colspan="2" align="center">Build information</th>
               </tr>
               <tr>
-                <td>OS Version</td><td>FluidOS 4.0.5.0 China</td>
+                <td>OS Version</td><td>FluidOS 4.0.5.0.XPTCNXM</td>
               </tr>
               <tr>
                 <td>Base Port</td><td>Xiaomi 17T</td>
@@ -69,7 +69,7 @@ jobs:
               </tr>
               <tr>
                 <td align="center"><a href="https://gofile.io/d/ig9ur94a">Fenrir (Gofile)</a></td>
-                <td align="center"><a href="https://pixeldrain.com/u/duL8ZfpN">Non-Fenrir (Gofile)</a></td>
+                <td align="center"><a href="https://gofile.io/d/3nX4jktp">Non-Fenrir (Gofile)</a></td>
               </tr>
             </table>
             <ol>
