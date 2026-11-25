@@ -18,7 +18,7 @@ jobs:
           set -euo pipefail
 
           HTML=$(cat <<EOF
-          #duchamp #port #a17 #coloros
+          #duchamp #port #a17 #hyperos #fenrir
           <img src="https://i.ibb.co/GvtW8bTQ/Frame-2-1.png" />
           <h1>FluidOS 4.0.5.0 China | FENRIR / NON-FENRIR | Port | Android 17</h1>
           <table bordered>
