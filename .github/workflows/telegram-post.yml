@@ -74,24 +74,26 @@ jobs:
             </table>
             <ol>
               <li><a href="https://telegra.ph/How-to-flash-08-19">How to flash</a></li>
-              <li><a href="https://telegra.ph/Changelog-10-29-17">Changelog</a></li>
-              <li><a href="https://t.me/DuchampROM_screenshots/391">Screenshots</a></li>
-              <li><a href="https://telegra.ph/Credits-10-24-12">Credits</a></li>
+              <li><a href="https://telegra.ph/Changelog-11-25-7">Changelog</a></li>
+              <li><a href="https://t.me/DuchampROM_screenshots/410">Screenshots</a></li>
+              <li><a href="https://telegra.ph/Credits-11-25-17">Credits</a></li>
             </ol>
           </details>
           <details>
             <summary><code>Notes</code></summary>
             <ol>
-              <li>Main post <a href="https://t.me/TengeOS_Roms/220">here</a></li>
-              <li>HDR, O-Haptic fixed, mind pilot, theme store returned</li>
-              <li>Saturation of screen is forced to 1.5</li>
-              <li>Can dirty flash from V1 global port</li>
+              <li>CLEAN FLASH ONLY FOR FENRIR!</li>
+              <li>Fullscreen aod fixed</li>
+              <li>To Reduce cpu clamping and cpusets, use <a href="https://t.me/DuchampROM_screenshots/343">this</a></li>
+              <li>Use <a href="https://t.me/DuchampROM_screenshots/449">this</a> guide to get strong on fenrir (cuz ports problem)</li>
+              <li>Use <a href="https://t.me/DuchampROM_screenshots/448">this</a> guide to get strong on non-fenrir</li>
+              <li>Both builds pre-rooted with GKI BakaSU (susfs v2.4.0)</li>
             </ol>
           </details>
           <details>
             <summary><code>Bugs</code></summary>
             <ol>
-              <li>Autobrightness</li>
+              <li>Nothing</li>
             </ol>
           </details>
           EOF
