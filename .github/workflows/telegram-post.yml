@@ -19,8 +19,8 @@ jobs:
 
           HTML=$(cat <<EOF
           #duchamp #port #a17 #coloros
-          <img src="https://i.ibb.co/bRb0QJtY/Frame-5.png" />
-          <h1>ColorOS 17 Global V2 | Port | Android 17</h1>
+          <img src="https://i.ibb.co/GvtW8bTQ/Frame-2-1.png" />
+          <h1>FluidOS 4.0.5.0.XPTCNXM | FENRIR / NON-FENRIR | Port | Android 17</h1>
           <table bordered>
             <tr>
               <th colspan="2" align="center">Device</th>
@@ -32,7 +32,7 @@ jobs:
               <td>Codename</td><td>Duchamp</td>
             </tr>
           </table>
-          Released: 03/11/2026<br>
+          Released: 25/11/2026<br>
           Maintainer: @wectazz
           <details>
             <summary><code>About ROM</code></summary>
@@ -41,16 +41,19 @@ jobs:
                 <th colspan="2" align="center">Build information</th>
               </tr>
               <tr>
-                <td>OS Version</td><td>ColorOS 17 Global V2</td>
+                <td>OS Version</td><td>FluidOS 4.0.5.0 China</td>
+              </tr>
+              <tr>
+                <td>Base Port</td><td>Xiaomi 17T</td>
               </tr>
               <tr>
                 <td>Android</td><td>17</td>
               </tr>
               <tr>
-                <td>Build Type</td><td>Non-Fenrir</td>
+                <td>Build Type</td><td>Fenrir / Non-Fenrir</td>
               </tr>
               <tr>
-                <td>Flashing Type</td><td>Fastboot only</td>
+                <td>Flashing Type</td><td>Hybrid (recovery/fastboot)</td>
               </tr>
             </table>
           </details>
@@ -61,8 +64,12 @@ jobs:
                 <th colspan="2" align="center">Download</th>
               </tr>
               <tr>
-                <td align="center"><a href="https://drive.google.com/file/d/1w0mtnW7xvZfvw5WX_TRZyXSRAFiI9yuv/view?usp=sharing">Link</a></td>
-                <td align="center"><a href="https://pixeldrain.com/u/duL8ZfpN">Mirror</a></td>
+                <td align="center"><a href="https://pixeldrain.com/u/qT9rQYNK">Fenrir (Pixeldrain)</a></td>
+                <td align="center"><a href="https://pixeldrain.com/u/4ZBjjMHG">Non-Fenrir (Pixeldrain)</a></td>
+              </tr>
+              <tr>
+                <td align="center"><a href="https://gofile.io/d/ig9ur94a">Fenrir (Gofile)</a></td>
+                <td align="center"><a href="https://pixeldrain.com/u/duL8ZfpN">Non-Fenrir (Gofile)</a></td>
               </tr>
             </table>
             <ol>
@@ -97,7 +104,7 @@ jobs:
               chat_id: $chat_id,
               link_preview_options: {
                 is_disabled: false,
-                url: "https://i.ibb.co/bRb0QJtY/Frame-5.png",
+                url: "https://i.ibb.co/GvtW8bTQ/Frame-2-1.png",
                 prefer_large_media: true
               },
               rich_message: {
